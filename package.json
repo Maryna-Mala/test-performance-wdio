@@ -6,10 +6,11 @@
     "@wdio/mocha-framework": "^9.2.8"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "test": "wdio run ./wdio.conf.js"
   },
   "dependencies": {
     "chai": "^5.1.2",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "mocha-better-spec-reporter": "^3.1.0"
   }
 }
