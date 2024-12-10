@@ -11,43 +11,27 @@ export const config = {
     specs: [
         './test/specs/**/*.js'
     ],
-    // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
     ],
 
     maxInstances: 10,
-    //
-    // If you have trouble getting all important capabilities together, check out the
-    // Sauce Labs platform configurator - a great tool to configure your capabilities:
-    // https://saucelabs.com/platform/platform-configurator
-    //
+
     capabilities: [{
         // capabilities for local browser web tests
         browserName: 'chrome' , // or "firefox", "microsoftedge", "safari"
         'goog:chromeOptions': {
-            args: ['headless', 'disable-gpu'] 
+            args: [
+                '--headless',
+                '--disable-gpu',
+                '--window-size=1920,1080', // установка размеров окна
+                '--no-sandbox',
+                '--disable-dev-shm-usage'
+            ]
         }
     }],
     // Level of logging verbosity: trace | debug | info | warn | error | silent
     logLevel: 'error',
-    //
-    // Set specific log levels per logger
-    // loggers:
-    // - webdriver, webdriverio
-    // - @wdio/browserstack-service, @wdio/lighthouse-service, @wdio/sauce-service
-    // - @wdio/mocha-framework, @wdio/jasmine-framework
-    // - @wdio/local-runner
-    // - @wdio/sumologic-reporter
-    // - @wdio/cli, @wdio/config, @wdio/utils
-    // Level of logging verbosity: trace | debug | info | warn | error | silent
-    // logLevels: {
-    //     webdriver: 'info',
-    //     '@wdio/appium-service': 'info'
-    // },
-    //
-    // If you only want to run your tests until a specific amount of tests have failed use
-    // bail (default is 0 - don't bail, run all tests).
     bail: 0,
     //
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
