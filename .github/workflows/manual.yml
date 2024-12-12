@@ -1,5 +1,17 @@
-name: CI/CD Manually
-on: [workflow_dispatch]
+name: CI/CD Pipeline Manual with threads
+on:
+  workflow_dispatch:
+    inputs:
+      threads: 
+        description: Threads to run on
+        required: true
+        type: choice
+        default: '1'
+        options:
+          - '1'
+          - '2'
+          - '4'
+          
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest # or macos-latest, windows-latest
@@ -17,7 +29,7 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm run wdio
+        run: npx wdio run wdio${{ inputs.threads }}.conf.js
         env:
           LOGIN_EMAIL: ${{ secrets.LOGIN_EMAIL }}
           INVALID_PASSWORD: ${{ secrets.INVALID_PASSWORD }}

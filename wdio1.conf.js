@@ -15,7 +15,7 @@ export const config = {
         // 'path/to/excluded/files'
     ],
 
-    maxInstances: 10,
+    maxInstances: 1,
 
     capabilities: [{
         // capabilities for local browser web tests
@@ -24,7 +24,7 @@ export const config = {
             args: [
                 '--headless',
                 '--disable-gpu',
-                '--window-size=1920,1080', // установка размеров окна
+                '--window-size=1920,1080', 
                 '--no-sandbox',
                 '--disable-dev-shm-usage'
             ]
