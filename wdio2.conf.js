@@ -9,8 +9,8 @@ export const config = {
     runner: 'local',
 
     specs: [
-        ['./test/specs/**/*.js'],
-        ['./test/specs/**/*.js']
+        ['./test/specs/add-product.spec.js', './test/specs/invalid-login.spec.js'],
+        ['./test/specs/lang-change.spec.js', './test/specs/search.spec.js'],
     ],
     exclude: [
         // 'path/to/excluded/files'

@@ -15,7 +15,7 @@ export const config = {
         // 'path/to/excluded/files'
     ],
 
-    maxInstances: 4,
+    maxInstances: 10,
 
     capabilities: [{
         // capabilities for local browser web tests
